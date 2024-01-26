@@ -20,27 +20,40 @@ body {
     font-size: 32px;
 }
 
-.left span {
+.navbar .left span {
     color: rgb(123, 111, 46);
 }
-.right {
+.navbar .right {
     width: 400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.right a {
+.navbar .right a {
     text-decoration: none;
     color: black;
 }
 
-.right a:hover {
+.navbar .right a:hover {
     text-decoration: underline;
 }
-.right img {
+.navbar .right img {
     width: 24px;
     height: 24px;
+}
+
+.navbar .bar {
+    background-color: black;
+    width: 32px;
+    height: 4px;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+.navbar .hamburger {
+    display: none;
+    
 }
 
 .grid-project {
@@ -135,6 +148,13 @@ body {
     .container {
         max-width: 100%;
     }
+
+    .navbar .left {
+        font-size: 30px;
+    }
+    .navbar .right {
+        width: 300px;
+    }
     .grid-project {
         max-width: 100%;
         grid-template-areas:  
@@ -147,8 +167,29 @@ body {
         ;
     }
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 16px 24px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: white;
+        width: 100%;
+    }
+    
+    .navbar .right {
+        display: none;
+    }
+    .navbar .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .grid-project {
+        margin-top: 100px;
         grid-template-areas:  
         "eth eth"
         "alphabet alphabet" 
@@ -165,7 +206,7 @@ body {
     }
 
     .footer {
-        font-size: 10px;
+        font-size: 14px;
         padding: 20px;
     }
 }
